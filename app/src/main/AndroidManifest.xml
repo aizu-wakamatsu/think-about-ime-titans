@@ -23,6 +23,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Declares the input method service -->
+        <service android:name="FastInputIME"
+            android:label="@string/fast_input_label"
+            android:permission="android.permission.BIND_INPUT_METHOD"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data android:name="android.view.im"
+                android:resource="@xml/keyboard" />
+        </service>
     </application>
 
 </manifest>
