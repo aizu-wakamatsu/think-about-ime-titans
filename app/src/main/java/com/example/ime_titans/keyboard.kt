@@ -1,6 +1,8 @@
 package com.example.ime_titans
 
+import android.inputmethodservice.InputMethodService
 import android.os.Bundle
+import android.view.View
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,26 +14,26 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.ime_titans.ui.theme.ImetitansTheme
 
-class MainActivity : ComponentActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-            ImetitansTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
-    }
+class keyboard : InputMethodService() {
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        setContent {
+//            ImetitansTheme {
+//                // A surface container using the 'background' color from the theme
+//                Surface(
+//                    modifier = Modifier.fillMaxSize(),
+//                    color = MaterialTheme.colorScheme.background
+//                ) {
+//                    Greeting("Android")
+//                }
+//            }
+//        }
+//    }
     override fun onCreateInputView(): View {
-        return layoutInflater.inflate(R.layout.input, null).apply {
+        return layoutInflater.inflate(R.layout.input, null).apply { //res/layout/input.xml
             if (this is MyKeyboardView) {
-                setOnKeyboardActionListener(this@MyInputMethod)
-                keyboard = latinKeyboard
+                setOnKeyboardActionListener(this)
+//                keyboard = latinKeyboard
             }
         }
     }

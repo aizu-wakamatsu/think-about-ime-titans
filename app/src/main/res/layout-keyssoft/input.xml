@@ -1,0 +1,82 @@
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="5">
+
+    <Button
+        android:id="@+id/key_1"
+        android:text="1"
+        style="@style/Key"/>
+
+    <Button
+        android:id="@+id/key_2"
+        android:text="2"
+        style="@style/Key"/>
+
+    <Button
+        android:id="@+id/key_3"
+        android:text="↑"
+        style="@style/Key"/>
+
+    <Button
+        android:id="@+id/key_4"
+        android:text="4"
+        style="@style/Key"/>
+
+    <Button
+        android:id="@+id/key_5"
+        android:text="5"
+        style="@style/Key"/>
+
+    <Button
+        android:id="@+id/key_6"
+        android:text="6"
+        style="@style/Key"/>
+
+    <Button
+        android:id="@+id/key_7"
+        android:text="←"
+        style="@style/Key"/>
+
+    <Button
+        android:id="@+id/key_8"
+        android:text="●"
+        style="@style/Key"/>
+
+    <Button
+        android:id="@+id/key_9"
+        android:text="→"
+        style="@style/Key"/>
+
+    <Button
+        android:id="@+id/key_10"
+        android:text="10"
+        style="@style/Key"/>
+
+    <Button
+        android:id="@+id/key_11"
+        android:text="11"
+        style="@style/Key"/>
+
+    <Button
+        android:id="@+id/key_12"
+        android:text="12"
+        style="@style/Key"/>
+
+    <Button
+        android:id="@+id/key_13"
+        android:text="↓"
+        style="@style/Key"/>
+
+    <Button
+        android:id="@+id/key_14"
+        android:text="14"
+        style="@style/Key"/>
+
+    <Button
+        android:id="@+id/key_15"
+        android:text="15"
+        style="@style/Key"/>
+
+</GridLayout>
