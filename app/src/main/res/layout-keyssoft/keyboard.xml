@@ -2,7 +2,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:columnCount="5">
+    android:columnCount="7">
 
     <Button
         android:id="@+id/key_1"
@@ -16,8 +16,10 @@
 
     <Button
         android:id="@+id/key_3"
-        android:text="↑"
-        style="@style/Key"/>
+        style="@style/Key"
+        android:layout_height="92dp"
+        android:layout_rowSpan="2"
+        android:text="↑" />
 
     <Button
         android:id="@+id/key_4"
@@ -26,8 +28,10 @@
 
     <Button
         android:id="@+id/key_5"
-        android:text="5"
-        style="@style/Key"/>
+        style="@style/Key"
+        android:layout_height="82dp"
+        android:layout_rowSpan="2"
+        android:text="5" />
 
     <Button
         android:id="@+id/key_6"
@@ -36,13 +40,14 @@
 
     <Button
         android:id="@+id/key_7"
-        android:text="←"
-        style="@style/Key"/>
+        style="@style/Key"
+        android:layout_height="wrap_content"
+        android:text="←" />
 
     <Button
         android:id="@+id/key_8"
-        android:text="●"
-        style="@style/Key"/>
+        style="@style/Key"
+        android:text="↑" />
 
     <Button
         android:id="@+id/key_9"
@@ -60,23 +65,8 @@
         style="@style/Key"/>
 
     <Button
-        android:id="@+id/key_12"
-        android:text="12"
-        style="@style/Key"/>
-
-    <Button
         android:id="@+id/key_13"
         android:text="↓"
-        style="@style/Key"/>
-
-    <Button
-        android:id="@+id/key_14"
-        android:text="14"
-        style="@style/Key"/>
-
-    <Button
-        android:id="@+id/key_15"
-        android:text="15"
         style="@style/Key"/>
 
 </GridLayout>
