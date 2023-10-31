@@ -1,5 +1,6 @@
 package com.example.ime_titans
 
+import android.annotation.SuppressLint
 import android.inputmethodservice.InputMethodService
 import android.view.MotionEvent
 import android.view.View
@@ -11,7 +12,7 @@ import androidx.compose.ui.input.key.KeyEvent
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.ime_titans.ui.theme.ImetitansTheme
 
-class keyboard : InputMethodService() {
+class keyboard : InputMethodService(), View.OnTouchListener {
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
 //        setContent {
@@ -29,6 +30,7 @@ class keyboard : InputMethodService() {
 
     private val keymap: KeymapHolder = Keymap()
     private var currentKeyId = 0
+
     override fun onCreateInputView(): View {
     return layoutInflater.inflate(R.layout.keyboard, null).also { view ->
         keymap.keys.map { id ->
@@ -40,22 +42,18 @@ class keyboard : InputMethodService() {
 //    private fun setOnKeyboardActionListener(keyboard: keyboard) {
 //
 //    }
-override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-    return if (v is Button && event is MotionEvent) {
+override fun onTouch(btn: View?, event: MotionEvent?): Boolean {
+    return if (btn is Button && event is MotionEvent) {
         when (event.action and MotionEvent.ACTION_MASK) {
             MotionEvent.ACTION_DOWN -> {
-                // 押下したボタンのandroid:idを保持
-                currentKeyId = v.id
+                currentKeyId = btn.id
                 false
             }
             MotionEvent.ACTION_UP -> {
-                // 押下ボタンに基づいた文字を入力
                 sendKeyEvent(currentKeyId)
                 currentKeyId = 0
                 false
             }
-            // タッチ位置が変わったり、複数指でタッチしても
-            // 見た目の変化が発生しないようにする
             else -> true
         }
     } else {
@@ -83,13 +81,19 @@ interface KeymapHolder {
 
 class Keymap : KeymapHolder {
     private val list: Map<Int, KeyInfo> = mapOf(
-        R.id.key_1 to KeyInfo.Num1,
-        R.id.key_2 to KeyInfo.Num2,
-        R.id.key_3 to KeyInfo.Num3,
-        R.id.key_4 to KeyInfo.Num4,
-        // 中略
-        R.id.key_19 to KeyInfo.Num9,
-        R.id.key_20 to KeyInfo.Num0
+        R.id.key_1 to KeyInfo.l1,
+        R.id.key_2 to KeyInfo.l2,
+        R.id.key_3 to KeyInfo.Lh,
+        R.id.key_4 to KeyInfo.Up,
+        R.id.key_5 to KeyInfo.Rh,
+        R.id.key_6 to KeyInfo.r1,
+        R.id.key_7 to KeyInfo.r2,
+        R.id.key_8 to KeyInfo.l3,
+        R.id.key_9 to KeyInfo.l4,
+        R.id.key_10 to KeyInfo.Dn,
+        R.id.key_11 to KeyInfo.r3,
+        R.id.key_12 to KeyInfo.r4,
+
     )
 
     override val keys = list.keys
@@ -107,15 +111,58 @@ sealed class KeyInfo {
         abstract val code: Int
     }
 
-    object Num0 : AsciiKeyInfo() {
-        override val char = '0'
-        override val code = KeyEvent.KEYCODE_0
-    }
-
-    object Num1 : AsciiKeyInfo() {
+    object Up: AsciiKeyInfo() {
         override val char = '1'
-        override val code = KeyEvent.KEYCODE_1
+        override val code = 0
     }
 
-    // 以下略
+    object Dn : AsciiKeyInfo() {
+        override val char = '1'
+        override val code = 1
+    }
+    object Lh: AsciiKeyInfo() {
+        override val char = '2'
+        override val code = 2
+    }
+
+    object Rh : AsciiKeyInfo() {
+        override val char = '3'
+        override val code = 3
+    }
+    object l1: AsciiKeyInfo() {
+        override val char = '4'
+        override val code = 4
+    }
+
+    object l2 : AsciiKeyInfo() {
+        override val char = '5'
+        override val code = 5
+    }
+    object l3: AsciiKeyInfo() {
+        override val char = '6'
+        override val code = 7
+    }
+
+    object l4 : AsciiKeyInfo() {
+        override val char = '7'
+        override val code = 8
+    }
+    object r1: AsciiKeyInfo() {
+        override val char = '8'
+        override val code = 9
+    }
+
+    object r2 : AsciiKeyInfo() {
+        override val char = '9'
+        override val code = 10
+    }
+    object r3: AsciiKeyInfo() {
+        override val char = 'r'
+        override val code = 11
+    }
+
+    object r4 : AsciiKeyInfo() {
+        override val char = 'r'
+        override val code = 12
+    }
 }

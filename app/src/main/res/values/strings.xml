@@ -3,4 +3,20 @@
     <string name="display_name_english_keyboard_ime">ime-titans</string>
     <string name="display_name_german_keyboard_ime">ime-titans</string>
     <string name="a">ime-titans</string>
+
+    <string name="key_l1">1</string>
+    <string name="key_l2">2</string>
+    <string name="key_l3">3</string>
+    <string name="key_l4">4</string>
+    <string name="key_r1">5</string>
+    <string name="key_r2">6</string>
+    <string name="key_r3">7</string>
+    <string name="key_r4">8</string>
+    <string name="key_up">↑</string>
+    <string name="key_dn">↓</string>
+    <string name="key_lh">←</string>
+    <string name="key_rh">→</string>
+
+
+
 </resources>
