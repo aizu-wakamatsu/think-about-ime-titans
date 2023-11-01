@@ -7,20 +7,6 @@ import android.view.View
 import android.widget.Button
 
 class Keyboard : InputMethodService(), View.OnTouchListener {
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContent {
-//            ImeTitansTheme {
-//                // A surface container using the 'background' color from the theme
-//                Surface(
-//                    modifier = Modifier.fillMaxSize(),
-//                    color = MaterialTheme.colorScheme.background
-//                ) {
-//                    Greeting("Android")
-//                }
-//            }
-//        }
-//    }
 
     private val keymap: KeymapHolder = Keymap()
     private var currentKeyId = 0
@@ -34,15 +20,12 @@ class Keyboard : InputMethodService(), View.OnTouchListener {
         }
     }
 
-    //    private fun setOnKeyboardActionListener(keyboard: keyboard) {
-//
-//    }
     @SuppressLint("ClickableViewAccessibility")
-    override fun onTouch(btn: View?, event: MotionEvent?): Boolean {
-        return if (btn is Button && event is MotionEvent) {
+    override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+        return if (v is Button && event is MotionEvent) {
             when (event.action and MotionEvent.ACTION_MASK) {
                 MotionEvent.ACTION_DOWN -> {
-                    currentKeyId = btn.id
+                    currentKeyId = v.id
                     false
                 }
 
@@ -59,7 +42,6 @@ class Keyboard : InputMethodService(), View.OnTouchListener {
         }
     }
 
-    // キー入力。本来はもっとごちゃごちゃするので簡略化。
     private fun sendKeyEvent(id: Int) {
         if (id !in keymap.keys) {
             return
@@ -70,7 +52,6 @@ class Keyboard : InputMethodService(), View.OnTouchListener {
             sendKeyChar(keyInfo.char)
         }
     }
-
 }
 
 interface KeymapHolder {
@@ -79,16 +60,29 @@ interface KeymapHolder {
 }
 
 class Keymap : KeymapHolder {
+    /*
+            キーの配列は以下の通り。03,04,05,10はカーソルキー
+
+            layout
+            01 02    04    06 07
+                  03    05
+            08 09    10    11 12
+
+            key mapping
+            L1 L2    Up    R1 R2
+                  Lh    Rh
+            L3 L4    Dn    R3 R4
+     */
     private val list: Map<Int, KeyInfo> = mapOf(
-        R.id.key_1 to KeyInfo.L1,
-        R.id.key_2 to KeyInfo.L2,
-        R.id.key_3 to KeyInfo.Lh,
-        R.id.key_4 to KeyInfo.Up,
-        R.id.key_5 to KeyInfo.Rh,
-        R.id.key_6 to KeyInfo.R1,
-        R.id.key_7 to KeyInfo.R2,
-        R.id.key_8 to KeyInfo.L3,
-        R.id.key_9 to KeyInfo.L4,
+        R.id.key_01 to KeyInfo.L1,
+        R.id.key_02 to KeyInfo.L2,
+        R.id.key_03 to KeyInfo.Lh,
+        R.id.key_04 to KeyInfo.Up,
+        R.id.key_05 to KeyInfo.Rh,
+        R.id.key_06 to KeyInfo.R1,
+        R.id.key_07 to KeyInfo.R2,
+        R.id.key_08 to KeyInfo.L3,
+        R.id.key_09 to KeyInfo.L4,
         R.id.key_10 to KeyInfo.Dn,
         R.id.key_11 to KeyInfo.R3,
         R.id.key_12 to KeyInfo.R4,

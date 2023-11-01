@@ -4,52 +4,52 @@
     android:columnCount="7">
 
     <Button
-        android:id="@+id/key_1"
+        android:id="@+id/key_01"
         style="@style/Key"
         android:text="@string/key_l1" />
 
     <Button
-        android:id="@+id/key_2"
+        android:id="@+id/key_02"
         style="@style/Key"
         android:text="@string/key_l2" />
 
     <Button
-        android:id="@+id/key_3"
+        android:id="@+id/key_03"
         style="@style/Key"
-        android:layout_height="98dp"
+        android:layout_height="96dp"
         android:layout_rowSpan="2"
         android:text="@string/key_lh" />
 
     <Button
-        android:id="@+id/key_4"
+        android:id="@+id/key_04"
         style="@style/Key"
         android:text="@string/key_up" />
 
     <Button
-        android:id="@+id/key_5"
+        android:id="@+id/key_05"
         style="@style/Key"
-        android:layout_height="wrap_content"
+        android:layout_height="96dp"
         android:layout_rowSpan="2"
         android:text="@string/key_rh" />
 
     <Button
-        android:id="@+id/key_6"
+        android:id="@+id/key_06"
         style="@style/Key"
         android:text="@string/key_r1" />
 
     <Button
-        android:id="@+id/key_7"
+        android:id="@+id/key_07"
         style="@style/Key"
         android:layout_height="wrap_content"
         android:text="@string/key_r2" />
 
     <Button
-        android:id="@+id/key_8"
+        android:id="@+id/key_08"
         style="@style/Key"
         android:text="@string/key_l3" />
 
     <Button
-        android:id="@+id/key_9"
+        android:id="@+id/key_09"
         style="@style/Key"
         android:text="@string/key_l4" />
 
