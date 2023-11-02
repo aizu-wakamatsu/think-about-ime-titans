@@ -50,6 +50,7 @@ class Keyboard : InputMethodService(), View.OnTouchListener {
         val keyInfo = keymap.getKeyInfo(id)
         if (keyInfo is KeyInfo.AsciiKeyInfo) {
             sendKeyChar(keyInfo.char)
+            sendKeyEvent()
         }
     }
 }
