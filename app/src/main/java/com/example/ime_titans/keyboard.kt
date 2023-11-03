@@ -50,7 +50,9 @@ class Keyboard : InputMethodService(), View.OnTouchListener {
         val keyInfo = keymap.getKeyInfo(id)
         if (keyInfo is KeyInfo.AsciiKeyInfo) {
             sendKeyChar(keyInfo.char)
-            sendKeyEvent()
+        }
+        else if (keyInfo is KeyInfo.CtrlKeyInfo) {
+            sendKeyEvent(keyInfo.code)
         }
     }
 }
@@ -105,23 +107,23 @@ sealed class KeyInfo {
         abstract val code: Int
     }
 
-    object Up : AsciiKeyInfo() {
-        override val char = '1'
+    abstract class CtrlKeyInfo : KeyInfo() {
+        abstract val code: Int
+    }
+
+    object Up : CtrlKeyInfo() {
         override val code = 0
     }
 
-    object Dn : AsciiKeyInfo() {
-        override val char = '1'
+    object Dn : CtrlKeyInfo() {
         override val code = 1
     }
 
-    object Lh : AsciiKeyInfo() {
-        override val char = '2'
+    object Lh : CtrlKeyInfo() {
         override val code = 2
     }
 
-    object Rh : AsciiKeyInfo() {
-        override val char = '3'
+    object Rh : CtrlKeyInfo() {
         override val code = 3
     }
 
