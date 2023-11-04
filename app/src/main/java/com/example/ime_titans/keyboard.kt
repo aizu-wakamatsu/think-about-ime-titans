@@ -2,6 +2,7 @@ package com.example.ime_titans
 
 import android.annotation.SuppressLint
 import android.inputmethodservice.InputMethodService
+import android.view.KeyEvent
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
@@ -104,7 +105,6 @@ sealed class KeyInfo {
 
     abstract class AsciiKeyInfo : KeyInfo() {
         abstract val char: Char
-        abstract val code: Int
     }
 
     abstract class CtrlKeyInfo : KeyInfo() {
@@ -112,58 +112,50 @@ sealed class KeyInfo {
     }
 
     object Up : CtrlKeyInfo() {
-        override val code = 0
+        override val code = KeyEvent.KEYCODE_ENTER
     }
 
     object Dn : CtrlKeyInfo() {
-        override val code = 1
+        override val code = KeyEvent.KEYCODE_DPAD_DOWN
     }
 
     object Lh : CtrlKeyInfo() {
-        override val code = 2
+        override val code = KeyEvent.KEYCODE_DPAD_LEFT
     }
 
     object Rh : CtrlKeyInfo() {
-        override val code = 3
+        override val code = KeyEvent.KEYCODE_DPAD_RIGHT
     }
 
     object L1 : AsciiKeyInfo() {
-        override val char = '4'
-        override val code = 4
+        override val char = '●'
     }
 
     object L2 : AsciiKeyInfo() {
         override val char = '5'
-        override val code = 5
     }
 
     object L3 : AsciiKeyInfo() {
         override val char = '6'
-        override val code = 7
     }
 
     object L4 : AsciiKeyInfo() {
         override val char = '7'
-        override val code = 8
     }
 
     object R1 : AsciiKeyInfo() {
         override val char = '8'
-        override val code = 9
     }
 
     object R2 : AsciiKeyInfo() {
         override val char = '9'
-        override val code = 10
     }
 
     object R3 : AsciiKeyInfo() {
         override val char = 'r'
-        override val code = 11
     }
 
     object R4 : AsciiKeyInfo() {
         override val char = '\n'
-        override val code = 12
     }
 }
