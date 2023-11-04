@@ -128,7 +128,7 @@ sealed class KeyInfo {
     }
 
     object L1 : AsciiKeyInfo() {
-        override val char = '●'
+        override val char = 'L'
     }
 
     object L2 : AsciiKeyInfo() {
