@@ -53,7 +53,9 @@ class Keyboard : InputMethodService(), View.OnTouchListener {
             sendKeyChar(keyInfo.char)
         }
         else if (keyInfo is KeyInfo.CtrlKeyInfo) {
-            sendKeyEvent(keyInfo.code)
+            currentInputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_DOWN,keyInfo.code))
+            currentInputConnection?.sendKeyEvent(KeyEvent(KeyEvent.ACTION_UP,keyInfo.code))
+            //sendKeyEvent(66)
         }
     }
 }
@@ -112,7 +114,7 @@ sealed class KeyInfo {
     }
 
     object Up : CtrlKeyInfo() {
-        override val code = KeyEvent.KEYCODE_ENTER
+        override val code = KeyEvent.KEYCODE_DPAD_UP
     }
 
     object Dn : CtrlKeyInfo() {
