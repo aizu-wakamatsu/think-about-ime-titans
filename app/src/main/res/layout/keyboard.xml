@@ -4,69 +4,108 @@
     android:background="@color/black"
     android:columnCount="7">
 
-    <Button
-        android:id="@+id/key_01"
-        style="@style/Key"
-        android:text="@string/key_l1" />
+
 
     <Button
-        android:id="@+id/key_02"
-        style="@style/Key"
-        android:text="@string/key_l2" />
+        android:id="@+id/key_Dollar"
+        style="@style/Key.Symbol"
+        android:text="@string/key_Dollar" />
+    <Button
+        android:id="@+id/key_Percent"
+        style="@style/Key.Symbol"
+        android:text="@string/key_Percent" />
+    <Button
+        android:id="@+id/key_Ampersand"
+        style="@style/Key.Symbol"
+        android:text="@string/key_Ampersand" />
+    <Button
+        android:id="@+id/key_Equals"
+        style="@style/Key.Symbol"
+        android:text="@string/key_Equals" />
+    <Button
+        android:id="@+id/key_Circumflex"
+        style="@style/Key.Symbol"
+        android:text="@string/key_Circumflex" />
 
     <Button
-        android:id="@+id/key_03"
-        style="@style/Key"
-        android:layout_height="96dp"
-        android:layout_rowSpan="2"
-        android:text="@string/key_lh" />
+        android:id="@+id/key_Tilde"
+        style="@style/Key.Symbol"
+        android:text="@string/key_Tilde" />
 
     <Button
-        android:id="@+id/key_04"
-        style="@style/Key"
-        android:text="@string/key_up" />
+        android:id="@+id/key_VerticalBar"
+        style="@style/Key.Symbol"
+        android:text="@string/key_VerticalBar" />
 
     <Button
-        android:id="@+id/key_05"
-        style="@style/Key"
-        android:layout_height="96dp"
-        android:layout_rowSpan="2"
-        android:text="@string/key_rh" />
+        android:id="@+id/key_Grave"
+        style="@style/Key.Symbol"
+        android:text="@string/key_Grave" />
 
     <Button
-        android:id="@+id/key_06"
-        style="@style/Key"
-        android:text="@string/key_r1" />
+        android:id="@+id/key_ArrowUp"
+        style="@style/Key.Control"
+        android:text="@string/key_ArrowUp" />
+
 
     <Button
-        android:id="@+id/key_07"
-        style="@style/Key"
-        android:layout_height="wrap_content"
-        android:text="@string/key_r2" />
+        android:id="@+id/key_Semicolon"
+        style="@style/Key.Symbol"
+        android:text="@string/key_Semicolon" />
 
     <Button
-        android:id="@+id/key_08"
-        style="@style/Key"
-        android:text="@string/key_l3" />
+        android:id="@+id/key_BktCurlyLeft"
+        style="@style/Key.Symbol"
+        android:text="@string/key_BktCurlyLeft" />
 
     <Button
-        android:id="@+id/key_09"
-        style="@style/Key"
-        android:text="@string/key_l4" />
+        android:id="@+id/key_BktCurlyRight"
+        style="@style/Key.Symbol"
+        android:text="@string/key_BktCurlyRight" />
 
     <Button
-        android:id="@+id/key_10"
-        style="@style/Key"
-        android:text="@string/key_dn" />
+        android:id="@+id/key_BktSquareLeft"
+        style="@style/Key.Symbol"
+        android:text="@string/key_BktSquareLeft" />
 
     <Button
-        android:id="@+id/key_11"
-        style="@style/Key"
-        android:text="@string/key_r3" />
+        android:id="@+id/key_BktSquareRight"
+        style="@style/Key.Symbol"
+        android:text="@string/key_BktSquareRight" />
 
     <Button
-        android:id="@+id/key_12"
-        style="@style/Key"
-        android:text="@string/key_r4" />
+        android:id="@+id/key_ArrowLeft"
+        style="@style/Key.Control"
+        android:text="@string/key_ArrowLeft" />
+
+    <Button
+        android:id="@+id/key_ArrowDown"
+        style="@style/Key.Control"
+        android:text="@string/key_ArrowDown" />
+
+    <Button
+        android:id="@+id/key_ArrowRight"
+        style="@style/Key.Control"
+        android:text="@string/key_ArrowRight" />
+
+    <Button
+        android:id="@+id/key_LessThan"
+        style="@style/Key.Symbol"
+        android:text="@string/key_LessThan" />
+
+    <Button
+        android:id="@+id/key_GreaterThan"
+        style="@style/Key.Symbol"
+        android:text="@string/key_GreaterThan" />
+
+
+    <Button
+        android:id="@+id/key_Backslash"
+        style="@style/Key.Symbol"
+        android:text="@string/key_Backslash" />
+    <Button
+        android:id="@+id/key_Enter"
+        style="@style/Key.Control"
+        android:text="@string/key_Enter" />
 
 </GridLayout>

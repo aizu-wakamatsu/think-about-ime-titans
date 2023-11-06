@@ -1,22 +1,26 @@
 <resources>
     <string name="app_name">ime-titans</string>
-    <string name="display_name_english_keyboard_ime">ime-titans</string>
-    <string name="display_name_german_keyboard_ime">ime-titans</string>
-    <string name="a">ime-titans</string>
 
-    <string name="key_l1">1</string>
-    <string name="key_l2">2</string>
-    <string name="key_l3">3</string>
-    <string name="key_l4">4</string>
-    <string name="key_r1">5</string>
-    <string name="key_r2">6</string>
-    <string name="key_r3">7</string>
-    <string name="key_r4">8</string>
-    <string name="key_up">↑</string>
-    <string name="key_dn">↓</string>
-    <string name="key_lh">←</string>
-    <string name="key_rh">→</string>
-
-
+    <string name="key_BktCurlyLeft">{</string>
+    <string name="key_BktCurlyRight">}</string>
+    <string name="key_BktSquareLeft">[</string>
+    <string name="key_BktSquareRight">]</string>
+    <string name="key_LessThan">&lt;</string>
+    <string name="key_GreaterThan">&gt;</string>
+    <string name="key_Dollar">$</string>
+    <string name="key_Percent">%</string>
+    <string name="key_Ampersand">&amp;</string>
+    <string name="key_Equals">=</string>
+    <string name="key_Circumflex">^</string>
+    <string name="key_Tilde">~</string>
+    <string name="key_VerticalBar">|</string>
+    <string name="key_Grave">`</string>
+    <string name="key_Semicolon">;</string>
+    <string name="key_Backslash">\</string>
+    <string name="key_ArrowUp">▲</string>
+    <string name="key_ArrowLeft">◀</string>
+    <string name="key_ArrowDown">▼</string>
+    <string name="key_ArrowRight">▶</string>
+    <string name="key_Enter">↲</string>
 
 </resources>
