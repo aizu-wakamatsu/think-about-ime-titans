@@ -16,7 +16,7 @@
     <string name="key_VerticalBar">|</string>
     <string name="key_Grave">`</string>
     <string name="key_Semicolon">;</string>
-    <string name="key_Backslash">\</string>
+    <string name="key_Backslash">\\</string>
     <string name="key_ArrowUp">▲</string>
     <string name="key_ArrowLeft">◀</string>
     <string name="key_ArrowDown">▼</string>
