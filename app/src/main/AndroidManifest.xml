@@ -26,6 +26,7 @@
                 android:name="android.view.im"
                 android:resource="@xml/method" />
         </service>
+
     </application>
 
 </manifest>
